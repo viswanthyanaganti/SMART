@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S M A R T</title>
+    <link rel="icon" href="logo.png" type="image/x-icon">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        /*header {
+            background-color: #757474;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }*/
+
+        header {
+            background-color: #808080;
+            color: white;
+            display: flex;
+            padding: 1px;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        header img {
+            width: 50px;
+            height: 50px;
+            padding-left: 50px;
+        }
+
+        header p{
+            color: #333;
+            padding-right: 20px;
+        }
+
+        
+
+        nav {
+        display: flex;
+        justify-content: space-between; /* Space between nav items and icons */
+        align-items: center;
+        background-color: #333; /* Dark background for navbar */
+        padding: 10px 20px; /* Padding for spacing */
+        }
+
+        nav ul {
+        list-style: none;
+        display: flex; /* Align nav items horizontally */
+        margin: 0;
+        padding: 0;
+        }
+
+        nav ul li {
+        margin-right: 20px; /* Space between menu items */
+        }
+
+        nav ul li a {
+        color: #fff; /* White text for links */
+        text-decoration: none;
+        font-size: 1.2rem;
+        transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+        color: #ff7a00; /* Orange color on hover */
+        }
+
+        /* Icons Section */
+        nav .icons {
+        display: flex; /* Align icons horizontally */
+        gap: 15px; /* Space between icons */
+        }
+
+        nav .icons a {
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        }
+
+        nav .icons img {
+        width: 100%; /* Ensure icons scale properly */
+        height: auto;
+        
+        transition: filter 0.3s ease;
+
+        }
+
+        nav .icons img:hover {
+        filter: invert(0.5) sepia(1) hue-rotate(15deg) saturate(5); /* Add color on hover */
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 5 20px;
+            padding: 20px;
+        }
+        
+       /* Row and Column Layout */
+        .row {
+        display: flex;
+        justify-content: space-between;
+        }
+
+        .column {
+        flex: 1;
+        padding: 20px;
+        text-align: center;
+        }
+
+        #hero img, #features img {
+        max-width: 100%;
+        height: auto;
+        object-fit: cover;
+        }
+
+        /* Hero Section */
+        #hero {
+        background-image: url('Smart-Watch.webp'); /* Full Background Image */
+        background-size: cover;
+        background-position: center;
+        color: #fff;
+        padding: 100px 0; /* Adjust padding as needed */
+        text-align: center;
+        }
+
+        #hero h1 {
+        font-size: 3rem;
+        }
+
+        #hero p {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+        }
+
+        #hero button {
+        padding: 15px 30px;
+        background-color: #ff7a00; /* Adjust button color */
+        border: none;
+        color: white;
+        font-size: 1rem;
+        cursor: pointer;
+        border-radius: 10px;
+        }
+
+        #hero button:hover {
+        background-color: #e65c00; /* Adjust hover color */
+        }
+
+        /* Features Section */
+        #features {
+        background-color: #fff;
+        /*border-image: fill 0 linear-gradient(#0001, #000);*/
+        padding: 50px 0;
+        }
+
+        #testimonials {
+        background-color: #f9f9f9;
+        padding: 40px 0;
+        text-align: center;
+        }
+
+        .product {
+            text-align: center;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            position: relative;
+        }
+
+        .product img {
+            width: 70%;
+            height: auto;
+            border-radius: 5px;
+            margin: 0 auto;
+        }
+
+        .product .buttons {
+            margin-top: 10px;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .product button {
+            padding: 10px 20px;
+            background-color: #808080;
+            color: #000;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .product button img {
+            width: 16px;
+            height: 16px;
+        }
+
+        .product button:hover {
+            background-color: #666666;
+        }
+
+        .features {
+            margin-top: 25px;
+            background-color: #f9f9f9;
+            padding: 25px;
+            text-align: center;
+        }
+
+        /*footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }*/
+
+        /* Footer Styling */
+        footer {
+        background-color: #333; /* Dark background */
+        color: #fff; /* White text */
+        padding: 40px 20px; /* Padding for spacing */
+        text-align: center;
+        }
+
+        footer h2 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+        }
+
+        footer form {
+        margin: 20px 0;
+        }
+
+        footer form input {
+        padding: 10px;
+        width: 250px;
+        max-width: 80%; /* Responsive width for smaller screens */
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 1rem;
+        margin-right: 10px;
+        }
+
+        footer form button {
+        padding: 10px 20px;
+        background-color: #ff7a00; /* Orange button */
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        }
+
+        footer form button:hover {
+        background-color: #e65c00; /* Slightly darker orange on hover */
+        }
+
+        footer p {
+        margin-top: 20px;
+        font-size: 0.9rem;
+        color: #bbb; /* Lighter gray text for copyright */
+        }
+
+        #bottom-banner {
+      background-image: url('down.png'); /* Replace with your image */
+      background-size: cover;
+      background-position: center;
+      height: 136px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+
+            nav {
+                flex-direction: column;
+            }
+
+            nav ul {
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="logo.png" alt="Company Logo">
+        <div class="H">
+            <p>The features that make you live smart look smart.</p>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#prod">Products</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="icons">
+            <img src="user.png" alt="Facebook Icon">
+            <img src="shop.png" alt="Twitter Icon">
+        </div>
+    </nav>
+
+    <section id="hero" class="row">
+        <div class="column">
+          
+          <p>Discover the ultimate solution for your needs.</p>
+          <button>Buy Now</button>
+        </div>
+    </section>
+
+<section id="features" class="row">
+    <div class="column">
+      <h2>Features</h2>
+      <p>Easy to use</p>
+      <p>High-quality materials</p>
+      <p>Affordable pricing</p>
+      <p>Long battery life </p>
+    </div>
+    <div class="column">
+      <img src="feature-image11b.png" alt="Feature Image" />
+    </div>
+  </section>
+
+<div class="container" id="prod">
+    
+    <div class="product">
+        <img src="1.jpg" alt="Product">
+        <h2>Fitbit smart</h2>
+        <p>Unisex | Series 2</p>
+        <div class="buttons">
+            <button>
+                <img src="shop-icon.png" alt="Shop Icon">
+                Buy Now
+            </button>
+            <button>
+                <img src="cart-icon.png" alt="Cart Icon">
+                Add to Cart
+            </button>
+        </div>
+    </div>
+    <div class="product">
+        <img src="2.webp" alt="Product">
+        <h2>Fitbit Versa</h2>
+        <p>Unisex | Series Versa</p>
+        <div class="buttons">
+            <button>
+                <img src="shop-icon.png" alt="Shop Icon">
+                Buy Now
+            </button>
+            <button>
+                <img src="cart-icon.png" alt="Cart Icon">
+                Add to Cart
+            </button>
+        </div>
+    </div>
+    <div class="product">
+        <img src="3.jpg" alt="Product">
+        <h2>Fitbit Inspire Fitness</h2>
+        <p>Unisex | Series Inspire </p>
+        <div class="buttons">
+            <button>
+                <img src="shop-icon.png" alt="Shop Icon">
+                Buy Now
+            </button>
+            <button>
+                <img src="cart-icon.png" alt="Cart Icon">
+                Add to Cart
+            </button>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<div class="features">
+    <h2>Why Choose Us?</h2>
+    <p>We provide the best products tailored to your needs, with exceptional customer service.</p>
+</div>
+<div id="bottom-banner">
+</div>
+
+
+<footer id="contact">
+    <h2>Contact Us</h2>
+    <form>
+      <input type="email" placeholder="Your email" />
+      <button type="submit">Submit</button>
+    </form>
+    <p>&copy; 2025 Your Company. All rights reserved.</p>
+
+</footer>
+
+</body>
+</html>
